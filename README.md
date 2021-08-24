@@ -1,6 +1,6 @@
 # Linn IT dev trial
 
-We write apps and services for various areas of the business and present them all to our users under one umbrella 'Linn Apps' experience. Anywhere on LinnApps you can see a menu that looks something like <a href="https://linn.github.io/react-components-library/?path=/story/components-navigation--default">this</a>.
+We write apps and services for various areas of the business and present them all to our users under one umbrella 'Linn Apps' experience. Anywhere on Linn Apps you can see a menu that looks something like <a href="https://linn.github.io/react-components-library/?path=/story/components-navigation--default">this</a>.
 
 The data behind the menu is served up as a json from http://app.linn.co.uk/intranet/menu-no-auth, which our react clients GET request in order to render the menu.
 
