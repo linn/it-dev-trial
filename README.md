@@ -7,7 +7,7 @@ The data behind the menu is served up as a json from http://app.linn.co.uk/intra
 Your task is to write a simple .Net middle-man service that can perform some operations on the menu before passing it along to the client.
 
 Your service will have to make an http GET request to the above url to fetch the menu.json, deserialize that data into a suitable C# structure informed by the shape of the json object, and then perform operations on the menu before passing it along to the client. You can use chrome, POSTMAN or a similiar http client to interact with your endpoint(s).
-Feel free to use any nuget packages you like to help you out, e.g. to make the http request for the menu, to deserialize the respoonse json etc..
+Feel free to use any nuget packages you like to help you out, e.g. to make the http request for the menu data, to deserialize the response json etc..
 
 ### Base Goal
 You should implement a simple REST API with the following endpoint:  <code>/api/search</code>
