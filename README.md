@@ -11,6 +11,7 @@ Feel free to use any nuget packages you like to help you out, e.g. to Deserializ
 
 ### Base Goal
 You should implement a simple REST API with the following endpoint:  <code>/api/search</code>
+
 The endpoint should service a GET request with one <code>string searchTerm</code> query parameter. It should return a 200 response with a json array of all MenuItems that contain the <strong>word(s)</strong> in the searchTerm in their Title field if any exist, or a 404 response if not. The search should be case insensitive. The search should only run on words, e.g. a search for 'Works' will return the 'Works Orders Utility' item, but a search for just 'Wo' won't.
 
 There's no pressure to finish the task in the short time we have, but if you do you...
