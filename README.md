@@ -6,12 +6,12 @@ The data behind the menu is served up as a json from http://app.linn.co.uk/intra
 
 Your task is to write a simple .Net middle-man service that can perform some operations on the menu before passing it along to the client.
 
-Your service will have to make an http GET request to the above url to fetch the menu.json, deserialize that data into a suitable C# structure informed by the shape of the menu.json, and then perform operations on the menu before passing it along to the client. You can use POSTMAN or a similiar http client to interact with your endpoint(s).
+Your service will have to make an http GET request to the above url to fetch the menu.json, deserialize that data into a suitable C# structure informed by the shape of the json object, and then perform operations on the menu before passing it along to the client. You can use POSTMAN or a similiar http client to interact with your endpoint(s).
 Feel free to use any nuget packages you like to help you out, e.g. to Deserialize the json etc..
 
 ### Base Goal
 You should implement a simple REST API with the following endpoint:  <code>/api/search</code>
-The endpoint should service a GET request with one string searchTerm parameter. It should return a 200 response with a json array of all MenuItems that contain the <strong>word(s)</strong> in the searchTerm in their Title field if any exist, or a 404 response if not. The search should be case insensitive. The search should only run on words, e.g. a search for 'Works' will return the 'Works Orders Utility' item, but a search for Wo won't.
+The endpoint should service a GET request with one <code>string searchTerm parameter</code>. It should return a 200 response with a json array of all MenuItems that contain the <strong>word(s)</strong> in the searchTerm in their Title field if any exist, or a 404 response if not. The search should be case insensitive. The search should only run on words, e.g. a search for 'Works' will return the 'Works Orders Utility' item, but a search for Wo won't.
 
 There's no pressure to finish the task in the short time we have, but if you do you...
 
