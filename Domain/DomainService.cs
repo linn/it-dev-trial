@@ -1,12 +1,13 @@
 namespace Domain
 {
+    using System;
     using System.Collections.Generic;
 
     public class DomainService : IDomainService
     {
         public IEnumerable<MenuItem> SearchMenu(Menu menu, string searchTerm)
         {
-            return new List<MenuItem> { new MenuItem { Title = "title" } }; 
+            throw new NotImplementedException();
         }
 
         // this is just to make sure tests are running
