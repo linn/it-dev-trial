@@ -6,19 +6,28 @@ The data behind the menu is served up as a json from http://app.linn.co.uk/intra
 
 Your task is to write a simple .Net middle-man service that can perform some operations on the menu before passing it along to the client.
 
-Your service will have to make an http GET request to the above url to fetch the menu.json, deserialize that data into a suitable C# structure informed by the shape of the json object, and then perform operations on the menu before passing it along to the client. You can use chrome, POSTMAN or a similiar http client to interact with your endpoint(s).
+Your service will have to make an http GET request to the above url to fetch the menu.json, deserialize that data into a suitable C# structure informed by the shape of the json object, and then perform operations on the menu before passing it along to the client. 
+
+You can use chrome, POSTMAN or a similiar http client to interact with your endpoint(s).
 Feel free to use any nuget packages you like to help you out, e.g. to make the http request for the menu data, to deserialize the response json etc..
 
 ### Base Goal
 You should implement a simple REST API with the following endpoint:  <code>/api/search</code>
 
-The endpoint should service a GET request with one <code>string searchTerm</code> query parameter. It should return a 200 response with a json array of all MenuItems that contain the <strong>word(s)</strong> in the searchTerm in their Title field if any exist, or a 404 response if not. The search should be case insensitive. The search should only run on words, e.g. a search for 'Works' will return the 'Works Orders Utility' item, but a search for just 'Wo' won't.
+The endpoint should service a GET request with one <code>string searchTerm</code> query parameter. It should return a 200 response with a json array of all MenuItems that contain the <strong>word(s)</strong> in the searchTerm in their Title field if any exist, or a 404 response if not. 
+
+The search should only run on words, e.g. a search for 'Works' will return the Menu Item titled 'Works Orders Utility', but a search for just 'Wo' won't.
+
+The search should be case insensitive.
 
 There's no pressure to finish the task in the short time we have, but if you do you...
 
 ### Further Goals
 Implement an additional endpoint: <code>api/section</code>
-It should take one string parameter <code>sectionName</code>. It should return a 200 response with only Menu Items in the relevant section of the menu as specified by the sectionName parameter. e.g. if you look at the data the first section is called 'Production'. A 404 response should be returned if an invalid section name is entered. Again the search should be case insensitive.
+
+It should take one string parameter <code>sectionName</code>. 
+
+It should return a 200 response with only Menu Items in the relevant section of the menu as specified by the sectionName parameter. e.g. if you look at the data the first section is called 'Production'. A 404 response should be returned if an invalid section name is entered. Again the search should be case insensitive.
 
 ### Template Structure
 We've provided a simple .net project here to get you started. 
