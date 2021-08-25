@@ -31,14 +31,14 @@ The Service currenly has the one search endpoint for you to implement.
 
 The Test project provides some testing boilerplate to get you started writing tests
 
-#### To run the Service
+### To run the Service
 cd into the Service folder and do 
 
 <code>dotnet run</code>
 
 The web server will be listening on locahost:50001 by default.
 
-#### To run the tests
+### To run the tests
 cd into the Tests directory and do 
 
 <code> dotnet test </code>
