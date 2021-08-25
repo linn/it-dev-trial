@@ -23,9 +23,9 @@ It should take one string parameter <code>sectionName</code>. It should return a
 ### Template Structure
 We've provided a simple .net project here to get you started. 
 
-The Domain contains a <code>Menu</code> and a <code>MenuItem</code> class that will represent the menu in C#. The menu should consist of MenuItems, but how you structure the data it is up to you. There's an IDomainService that you should implement to filter the menu data appropriately.
+The Domain contains a <code>Menu</code> and a <code>MenuItem</code> class that will represent the menu in C#. The menu should consist of MenuItems, but how you structure the data it is up to you. There's an <code>IDomainService</code> that you should implement to filter the menu data appropriately.
 
-There's a skeleton IMenuService in the Proxy project which we expect you will implement to make an http request for the initial menu.json and convert it into your C# domain objects.
+There's a skeleton <code>IMenuService</code> in the Proxy project which we expect you will implement to make an http request for the initial menu.json and convert it into your C# domain objects.
 
 The Service currenly has the one search endpoint for you to implement.
 
