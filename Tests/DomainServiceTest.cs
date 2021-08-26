@@ -3,15 +3,31 @@ namespace Tests
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     using Domain;
-
+    
     [TestClass]
     public class DomainServiceTest
     {
+        private bool result = false;
+
+        private DomainService serviceUnderTest;
+
+        [TestInitialize]
+        public void SetUp()
+        {
+            this.serviceUnderTest = new DomainService();
+            this.result = this.serviceUnderTest.Test();
+        }
+
         [TestMethod]
         public void TestMethod()
         {
-            var Sut = new DomainService();
-            Assert.IsTrue(Sut.Test());
+            Assert.IsTrue(this.result);
+        }
+
+        [TestCleanup]
+        public void Cleanup()
+        {
+            this.result = false;
         }
     }
 }
