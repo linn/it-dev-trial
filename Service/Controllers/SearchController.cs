@@ -7,19 +7,19 @@
     using Domain;
     using Proxy;
 
-    [Route("api/[controller]")]
+    [Route("menu/[controller]")]
     [ApiController]
-    public class MenuController : ControllerBase
+    public class SearchController : ControllerBase
     {
         private readonly IDomainService domainService;
 
         private readonly IMenuService menuService;
 
-        public MenuController()
+        public SearchController()
         {
         }
 
-        // GET api/menu
+        // GET menu/search
         [HttpGet]
         public ActionResult<IEnumerable<MenuItem>> Get(string searchTerm=null)
         {
