@@ -12,7 +12,7 @@ You can use chrome, POSTMAN or a similiar http client to interact with your endp
 Feel free to use any nuget packages you like to help you out, e.g. to make the http request for the menu data, to deserialize the response json etc..
 
 ### Base Goal
-You should implement a simple REST API with the following endpoint:  <code>/menu/search</code>
+You should implement a simple REST endpoint:  <code>/menu/search</code>
 
 The endpoint should service a GET request with one <code>string searchTerm</code> query parameter. It should return a 200 response with a json array of all MenuItems that contain the <strong>word(s)</strong> in the searchTerm in their Title field if any exist, or a 404 response if not. 
 
