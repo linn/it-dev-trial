@@ -12,7 +12,7 @@ You can use chrome, POSTMAN or a similiar http client to interact with your endp
 Feel free to use any nuget packages you like to help you out, e.g. to make the http request for the menu data, to deserialize the response json etc..
 
 ### Base Goal
-You should implement a simple REST API with the following endpoint:  <code>/api/search</code>
+You should implement a simple REST API with the following endpoint:  <code>/menu/search</code>
 
 The endpoint should service a GET request with one <code>string searchTerm</code> query parameter. It should return a 200 response with a json array of all MenuItems that contain the <strong>word(s)</strong> in the searchTerm in their Title field if any exist, or a 404 response if not. 
 
@@ -23,7 +23,7 @@ The search should be case insensitive.
 There's no pressure to finish the task in the short time we have, but if you do you...
 
 ### Further Goals
-Implement an additional endpoint: <code>api/section</code>
+Implement an additional endpoint: <code>menu/section</code>
 
 It should take one string parameter <code>sectionName</code>. 
 
@@ -51,3 +51,6 @@ The web server will be listening on locahost:50001 by default.
 cd into the Tests directory and do 
 
 <code> dotnet test </code>
+
+### Debugging
+We have provided a vscode launch config which should allow you to use the <a href="https://code.visualstudio.com/docs/editor/debugging">Visual Studio Code debugger</a>. You might need to install some extensions - we can help you get your environment set up if you get stuck.
