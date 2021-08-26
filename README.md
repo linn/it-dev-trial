@@ -54,5 +54,3 @@ cd into the Tests directory and do
 
 ### Debugging
 We have provided a vscode launch config which should allow you to use the <a href="https://code.visualstudio.com/docs/editor/debugging">Visual Studio Code debugger</a>. You might need to install some extensions - we can help you get your environment set up if you get stuck.
-
-<code> dotnet test </code>
