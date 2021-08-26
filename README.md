@@ -11,23 +11,18 @@ Your service will have to make a http GET request to the above url to fetch the 
 You can use chrome, POSTMAN or a similiar http client to interact with your endpoint(s).
 Feel free to use any nuget packages you like to help you out, e.g. to make the http request for the menu data, to deserialize the response json etc..
 
-### Base Goal
-You should implement a simple REST endpoint:  <code>/menu/search</code>
+### First Goal
+You should model the menu data in C# and implement a <code>DomainService</code> method that takes an object of your <code>Menu</code> class and a <code>string searchTerm</code> and returns a list of all <code>MenuItem</code>'s that have title words equal to the searchTerm, i.e. the search should only run on words, so a search for 'Works' will return the Menu Item titled 'Works Orders Utility', but a search for just 'Wo' won't since 'Wo' isn't a word in the title. The search should be case insensitive.
 
-The endpoint should service a GET request with one <code>string searchTerm</code> query parameter. It should return a 200 response with a json array of all MenuItems that contain the <strong>word(s)</strong> in the searchTerm in their Title field if any exist, or a 404 response if not. 
+### Second Goal
+You should Implement the <code>GetMenu()</code> method in the <code>IMenuService</code> interface in the Proxy project. This method should make a http request to the <code>/menu-no-auth</code> endpoint specified above and deserialize the response json into your C# <code>Menu</code> data structure. It should return a <code>Menu</code> object to pass to your Domain search method.
 
-The search should only run on words, e.g. a search for 'Works' will return the Menu Item titled 'Works Orders Utility', but a search for just 'Wo' won't.
+### Third Goal
+You should then implement a simple REST endpoint:  <code>/menu/search</code> in the Service project. The endpoint will call upon your work in the Domain and Proxy project to filter the menu data.
 
-The search should be case insensitive.
+The request should have one searchTerm <code>string</code> parameter to pass to your domain Search method.
 
-There's no pressure to finish the task in the short time we have, but if you do you...
-
-### Further Goals
-Implement an additional endpoint: <code>menu/section</code>
-
-It should take one string parameter <code>sectionName</code>. 
-
-It should return a 200 response with only Menu Items in the relevant section of the menu as specified by the sectionName parameter. e.g. if you look at the data the first section is called 'Production'. A 404 response should be returned if an invalid section name is entered. Again the search should be case insensitive.
+It should return a 200 response with a json array of all <code>MenuItem</code>'s that your Domain Search Methods returned, or a 404 result if your Domain method didn't return any matches.
 
 ### Template Structure
 We've provided a simple .net project here to get you started. 
@@ -36,16 +31,16 @@ The Domain contains a <code>Menu</code> and a <code>MenuItem</code> class that w
 
 There's an <code>IMenuService</code> interface in the Proxy project which we expect you will implement to make a http request for the initial menu.json and convert it into your C# domain objects.
 
-The Service currenly has the one search endpoint for you to implement.
+The Service has a single <code>/menu/search</code> endpoint for you to build out.
 
-The Test project provides some testing boilerplate to get you started writing tests
+The Test project provides some testing boilerplate to get you started writing tests for your </code>DomainService</code>.
 
 ### To run the Service
 cd into the Service folder and do 
 
 <code>dotnet run</code>
 
-The web server will be listening on locahost:50001 by default.
+The web server will be listening on locahost:5001 by default.
 
 ### To run the tests
 cd into the Tests directory and do 
