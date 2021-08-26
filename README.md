@@ -51,3 +51,8 @@ The web server will be listening on locahost:50001 by default.
 cd into the Tests directory and do 
 
 <code> dotnet test </code>
+
+### Debugging
+We have provided a vscode launch config which should allow you to use the <a href="https://code.visualstudio.com/docs/editor/debugging">Visual Studio Code debugger</a>. You might need to install some extensions - we can help you get your environment set up if you get stuck.
+
+<code> dotnet test </code>
