@@ -54,3 +54,25 @@ cd into the Tests directory and do
 
 ### Debugging
 We have provided a vscode launch config which should allow you to use the <a href="https://code.visualstudio.com/docs/editor/debugging">Visual Studio Code debugger</a>. You might need to install some extensions - we can help you get your environment set up if you get stuck.
+
+
+
+### Trouble building?
+The servcie is a .Net Core 2.2 web app, so you'll need to have <a href="https://dotnet.microsoft.com/download/dotnet/2.2">that sdk</a> installed.
+
+Check what version, if any, you are on by doing:
+
+<code>dotnet --version</code>
+
+If that's doesn't say 2.2.x, do
+
+<code>dotnet --list-sdks</code>
+
+To check you have a 2.2.x sdk locally. If you do, do
+
+<code>dotnet new globaljson</code>
+
+and update the file to specify that the app uses your 2.2.x version.
+
+check <code>dotnet --version</code> again and if all is well you should be able to <code>dotnet build</code> etc.
+
