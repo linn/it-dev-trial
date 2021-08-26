@@ -4,9 +4,9 @@ We write apps and services for various areas of the business and present them al
 
 The data behind the menu is served up as a json from http://app.linn.co.uk/intranet/menu-no-auth, which our react clients GET request in order to render the menu.
 
-Your task is to write a simple .Net middle-man service that can perform some operations on the menu before passing it along to the client.
+Your task is to write a simple .Net service that requests the menu and then performs some operations on the menu before passing it along to the client.
 
-Your service will have to make an http GET request to the above url to fetch the menu.json, deserialize that data into a suitable C# structure informed by the shape of the json object, and then perform operations on the menu before passing it along to the client. 
+Your service will have to make a http GET request to the above url to fetch the menu.json, deserialize that string into a suitable C# structure informed by the shape of the json object, and then perform filter operations on the menu before passing it along to the client. 
 
 You can use chrome, POSTMAN or a similiar http client to interact with your endpoint(s).
 Feel free to use any nuget packages you like to help you out, e.g. to make the http request for the menu data, to deserialize the response json etc..
@@ -32,9 +32,9 @@ It should return a 200 response with only Menu Items in the relevant section of 
 ### Template Structure
 We've provided a simple .net project here to get you started. 
 
-The Domain contains a <code>Menu</code> and a <code>MenuItem</code> class that will represent the menu in C#. The menu should consist of MenuItems, but how you structure the data it is up to you. There's an <code>IDomainService</code> that you should implement to filter the menu data appropriately.
+The Domain contains a <code>Menu</code> and a <code>MenuItem</code> class that will represent the menu in C#. The menu should consist of MenuItems, but how you structure the data it is up to you. There's an <code>IDomainService</code> interface that you should implement to filter the menu data appropriately.
 
-There's a skeleton <code>IMenuService</code> in the Proxy project which we expect you will implement to make an http request for the initial menu.json and convert it into your C# domain objects.
+There's an <code>IMenuService</code> interface in the Proxy project which we expect you will implement to make a http request for the initial menu.json and convert it into your C# domain objects.
 
 The Service currenly has the one search endpoint for you to implement.
 
