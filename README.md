@@ -22,7 +22,7 @@ You should then implement a simple REST endpoint:  <code>/menu/search</code> in 
 
 The request should have one searchTerm <code>string</code> parameter to pass to your domain Search method.
 
-It should return a 200 response with a json array of all MenuItems that your Domain Search Methods returned, or a 404 result if your Domain method didn't return any matches.
+It should return a 200 response with a json array of all <code>MenuItem</code>'s that your Domain Search Methods returned, or a 404 result if your Domain method didn't return any matches.
 
 ### Template Structure
 We've provided a simple .net project here to get you started. 
